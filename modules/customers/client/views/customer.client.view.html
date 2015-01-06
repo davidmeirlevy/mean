@@ -1,0 +1,15 @@
+<div class="row" data-ng-controller="CustomerController">
+    <div class="col-sm-3 col-md-2 sidebar">
+        <div class="nav nav-sidebar">
+            <h1 data-ng-bind="customer.fullName"></h1>
+        </div>
+        <ul class="nav nav-sidebar">
+            <li data-ng-repeat="item in customerMenu.items" data-ng-class="{active: $state.includes(item.state)}">
+                <a data-ui-sref="{{item.state}}" data-ng-bind="item.title"></a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <div data-ui-view></div>
+    </div>
+</div>
